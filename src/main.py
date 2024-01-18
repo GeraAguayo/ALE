@@ -1,5 +1,6 @@
 from ale_voice import Voice
-
+from speech_recon import SpeechRecon
+import speech_recognition as sr
 def test():
 
     ale = Voice(150, 2)
@@ -13,16 +14,13 @@ def test():
     ale.setVoiceRate(150)
     ale.speak("Saludos a la driver")
 
-str = '''
-          _      ______ 
-     /\   | |    |  ____|
-    /  \  | |    | |__   
-   / /\ \ | |    |  __|  
-  / ____ \| |____| |____ 
- /_/    \_\______|______|
-                         
-                         
-'''
-print(str)
-test()
+
+
+def test_recon():
+    sr = SpeechRecon()
+
+    comando = sr.listen()
+
+test_recon()
+
 
