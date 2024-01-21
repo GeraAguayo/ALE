@@ -1,6 +1,7 @@
 from ale_voice import Voice
 from speech_recon import SpeechRecon
-import speech_recognition as sr
+import pywhatkit
+
 def test():
 
     ale = Voice(150, 2)
@@ -21,6 +22,28 @@ def test_recon():
 
     comando = sr.listen()
 
-test_recon()
+ale = Voice(150, 2)
+sr = SpeechRecon()
+
+def main():
+
+
+    while True:
+        ale.speak("Dime..")
+        command = sr.listen()
+
+        if command == "reproduce in euro":
+            ale.speak("Reproduciendo Y lloro de Junior H en Youtube")
+            pywhatkit.playonyt("Y lloro Junior H")
+        if command == "gracias":
+            ale.speak("No hay problema")
+            quit()
+        else:
+            ale.speak("Repitelo de nuevo")
+
+
+
+main()
+        
 
 
